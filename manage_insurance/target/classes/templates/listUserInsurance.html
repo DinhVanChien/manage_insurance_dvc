@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>ListInsurce</title>
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js}">
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js}">
+    </script>
+    <script src="../static/js/main.js"
+            th:src="@{/js/main.js}">
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row wrapper">
+        <div class="col-md-auto">
+            <div class="header">
+                <div th:include="~{/header ::#header}"></div>
+            </div>
+            <!-- ****************** Title area ************************ -->
+            <form th:action="@{/insurances}" th:object="${searchForm}" method="POST">
+                <div class="choose">
+                    <h2>Danh sách thẻ bảo hiểm</h2>
+                    <label>Company</label>
+                    <select id="company" class="form-control" th:field="*{companyId}">
+                        <option th:each="company : ${listCompany}"
+                                th:value="${company.id}"
+                                th:utext="${company.name}">
+                        </option>
+                    </select>
+                </div>
+                <!-- ****************** search area ************************ -->
+                <div id="search">
+                    <p style="padding-top: 5px;">Thông tin tìm kiến</p>
+                    <table id="tblSearch" class="table-borderless">
+                        <tbody>
+                        <tr>
+                            <td>Tên người sử dụng</td>
+                            <td><input th:field="*{userFullName}" id="inName" type="text">
+                        </tr>
+                        <tr>
+                            <td>Mã số thẻ bảo hiểm</td>
+                            <td><input th:field="*{insuranceNumber}" id="inInsurance" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Nơi đăng kí</td>
+                            <td><input th:field="*{placeRegister}" id="inPlance" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="submit" id="btnSearch" class="btn btn-success">Tìm kiếm</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ****************** register và export ************************ insurances/export-csv-->
+                <div class="registerExport">
+                    <div class="dangKi">
+                        <a th:href="@{/insurances/add}" class="btn btn-success"> <i
+                                class="fa fa-arrow-circle-o-left"></i>Đăng kí</a>
+                    </div>
+                    <div class="export">
+                        <a th:href="@{/insurances/export}" class="btn btn-success grid-item"
+                           id="btnExport">ExportCSV</a>
+                    </div>
+                </div>
+                <!-- ****************** view listUser area ************************ -->
+            </form>
+            <div class="viewUser">
+                <table id="tblListUser" class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <td align="left">Tên người sử dụng
+                            <span> <a th:href="@{/insurances/home/(sort=ASC)}"> ▲ </a></span>
+                            <span> <a th:href="@{/insurances/home/(sort=DESC)}"> ▼ </a></span>
+                        </th>
+                        <th>Giới tính</th>
+                        <th>Ngày sinh</th>
+                        <th>Mã số thẻ bảo hiểm</th>
+                        <th>Kì hạn</th>
+                        <th>Nơi đăng ký KCB</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr id="trViewUser" th:each="in : ${pagesDto.insuranceForms}">
+                        <td id="name">
+                            <a th:href="@{/insurances/detail/{id} (id=${in.id})}"
+                               th:utext="${in.fullName}"></a>
+                        </td>
+                        <td id="sex" th:utext="${in.sex} == '1' ? 'Nam' : 'Nữ'"></td>
+                        <td id="brithDay" th:utext="${in.birthDate}"></td>
+                        <td id="mumberIn" th:utext="${in.numberInsurance}"></td>
+                        <td id="startEndDate"
+                            th:utext="${in.startDateInsurance} + ' đến ' + ${in.endDateInsurance}"></td>
+                        <td id="place" th:utext="${in.placeRegisterOfInsurance}"></td>
+                    </tr>
+                    </tbody>
+                    <div th:if="${pagesDto.insuranceForms == null}">
+                        <tr>
+                            <td colspan="2" style="color: red" align="center">Không có thẻ bảo hiểm nào
+                            </td>
+                        </tr>
+                    </div>
+                </table>
+            </div>
+            <div class="row">
+                <ul class="pagination">
+                    <li th:class="${pagesDto.currentPage == 1}? 'page-item disabled' : 'page-item'"
+                        th:if="${pagesDto.currentPage != 1}">
+                        <a style="height: 39px" class="page-link" th:href="@{'/insurances/home/?page=1'}">First</a>
+                    </li>
+                    <li th:class="${pagesDto.currentPage == 1}? 'page-item disabled': 'page-item' "
+                        th:if="${pagesDto.currentPage != 1}">
+                        <a class="page-link" aria-label="Previous"
+                           th:href="@{|${baseUrl}${pagesDto.currentPage - 1}|}"
+                           title='Go to previous page'><span aria-hidden="true">«</span>
+                            <span class="sr-only">Previous</span></a>
+                    </li>
+                    <li th:each="item : ${#numbers.sequence(pagesDto.startPage,pagesDto.endPage)}"
+                        th:class="${item == pagesDto.currentPage ? 'page-item active' :'page-item' }">
+                        <a class="page-link" th:href="@{|${baseUrl}${item}|}"> <span
+                                th:text='${item}'>1</span>
+                        </a>
+                    </li>
+                    <li th:class="${pagesDto.currentPage == pagesDto.totalPage}? 'page-item disabled': 'page-item'"
+                        th:if="${pagesDto.currentPage != pagesDto.totalPage}">
+                        <a class="page-link" aria-label="Next"
+                           th:href="@{|${baseUrl}${pagesDto.currentPage + 1}|}" title='Go to next page'><span
+                                aria-hidden="true">»</span> <span class="sr-only">Next</span></a>
+                    </li>
+                    <li th:class="${pagesDto.currentPage == pagesDto.totalPage}? 'page-item disabled':'page-item'"
+                        th:if="${pagesDto.currentPage != pagesDto.totalPage}">
+                        <a style="height: 39px" class="page-link"
+                           th:href="@{|${baseUrl}${pagesDto.totalPage}|}">Last</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

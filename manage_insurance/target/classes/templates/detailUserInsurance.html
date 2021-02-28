@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DetailInsurance</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js}">
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js}">
+    </script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/stylepopup.css}"/>
+    <link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.6.3/css/all.css}">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 ">
+            <div class="header">
+                <div th:include="~{/header ::#header}"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Chi tiết thông tin thể bảo hiểm</h2>
+                <a th:href="@{'/insurances/home?type=back'}" class="btn btn-success">Quay lại</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Mã số thẻ bảo hiểm</td>
+                        <td th:utext="${insurance.numberInsurance}"></td>
+                    </tr>
+                    <tr>
+                        <td>Họ và tên</td>
+                        <td th:utext="${insurance.fullName}"></td>
+                    </tr>
+                    <tr>
+                        <td>Giới tính</td>
+                        <td th:utext="${insurance.sex} == '1' ? 'Nam': 'Nữ'"></td>
+                    </tr>
+                    <tr>
+                        <td>Ngày sinh</td>
+                        <td th:utext="${insurance.birthDate}"></td>
+                    </tr>
+                    <tr>
+                        <td>Tên công ty</td>
+                        <td th:utext="${insurance.companyName}"></td>
+                    </tr>
+                    <tr>
+                        <td>Nơi đăng kí KCB</td>
+                        <td th:utext="${insurance.placeRegisterOfInsurance}"></td>
+                    </tr>
+                    <tr>
+                        <td>Kì hạn thẻ bảo hiểm</td>
+                        <td th:utext="${insurance.startDateInsurance} +' đến '
+                            +${insurance.endDateInsurance}"></td>
+                    </tr>
+                </table>
+                <a class="btn btn-success click"
+                   th:if="${role == true}" ? th:disabled>Delete</a>
+
+                <a id="btnUpdate" th:href="@{/insurances/update/{id} (id=${insurance.id})}" class="btn btn-success"
+                   th:if="${role == true}" ? th:disabled>Update</a>
+            </div>
+        </div>
+        <div class="popup_box">
+            <i class="fas fa-exclamation"></i>
+            <h1>Thông báo!</h1>
+            <label>Bạn có chắc chắn muốn xóa record?</label>
+            <div class="btns">
+                <a href="#" class="btnCancel">Cancel</a>
+                <input type="button" th:onclick="'deleteInsurance(\''+ ${insurance.id} +'\');'"
+                       class="btnDelete" value="Delete"/>
+            </div>
+            <div class="result">
+                <a href="#" class="btnResult">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function deleteInsurance(id) {
+        $('.popup_box').css("display", "none");
+        $.ajax({
+            type: "GET",
+            url: "/admin/insurances/delete/" + id,
+            data: {id: id},
+            timeout: 60000
+        }).done(function (reponse) {
+            setTimeout(function () {
+                $('.popup_box').css("display", "block");
+                $('.popup_box').find("label").text(reponse.message);
+                $('.result').css("display", "block");
+                $('.btns').hide();
+                if (reponse.status) {
+                    $('.btnResult').click(function () {
+                        window.location = "/insurances";
+                    });
+                }
+            }, 2000);
+
+        }).fail(function () {
+            setTimeout(function () {
+            }, 2000);
+        });
+    }
+
+    $(document).ready(function () {
+        $('.click').click(function () {
+            $('.popup_box').css("display", "block");
+        });
+        $('.btnCancel').click(function () {
+            $('.popup_box').css("display", "none");
+        });
+    });
+</script>
+</html>

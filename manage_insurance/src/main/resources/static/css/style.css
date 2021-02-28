@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Times New Roman";
+    font-size: 16px;
+}
+
+td {
+    padding: 10px 10px;
+    font-size: 20px;
+}
+
+.form-group .form-control {
+    width: 75%;
+}
+
+h4 {
+    color: #ff0000;
+}
+
+#header {
+    height: 50px;
+}
+
+#header a {
+    font-size: 18px;
+}
+
+.header {
+    width: 100%;
+    position: relative;
+}
+
+.header div {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+<!--
+* * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+-->
+
+.company span {
+    font-weight: bold;
+}
+
+.container .col-md-10 .choose,
+.container .col-md-10 .search,
+.container .col-md-10 .registerExport,
+.container .col-md-10 .viewUser {
+    width: 100%;
+}
+
+select.form-control {
+    width: 15%;
+}
+
+.table-borderless {
+    margin-bottom: 20px;
+}
+
+.table-borderless tbody tr td {
+    padding: 6px;
+}
+
+#tblSearch {
+    width: 50%;
+}
+
+.table-borderless tbody tr td input {
+    width: 250px;
+    font-size: 16px;
+}
+
+#search {
+    height: 240px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.registerExport {
+    height: 40px;
+    display: grid;
+    grid-template-columns:50% 50%;
+    margin: 10px 0 10px 0;
+}
+
+.content {
+    margin: 20px 0 20px 0;
+}
+
+.tblListUser tr th {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+#tblSearch {
+    border: 1px solid black;
+}
+
+#btnLogin {
+    width: 150px;
+    margin-right: 50px;
+}
+
+span {
+    font-size: 18px;
+}
+
+.btnDangki a {
+    color: white;
+}
+
+#btnUpdate {
+    margin-left: 30px;
+}
+
+.col-md-10, .col-md-8, .col-md-6 {
+    margin: 0 auto;
+}
+
+.row {
+    margin-bottom: 30px;
+}
+
+.row .col-md-8 a {
+    margin-bottom: 15px;
+}

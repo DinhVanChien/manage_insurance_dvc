@@ -1,0 +1,10 @@
+.error {
+    width: 70%;
+    margin-top: 5%;
+    margin: 0 auto;
+}
+
+.message {
+    color: red;
+    font-size: 18px;
+}

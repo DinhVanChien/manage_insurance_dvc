@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="386b109a-e670-4400-a77e-35e91e36214c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/manager_insurance.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_04.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/dto/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/stylepopup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_csv_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insurance.iml" beforeDir="false" afterPath="$PROJECT_DIR$/insurance.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/AddInsuranceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/AddInsuranceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/AjaxAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/CompanyRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/DeleteInsuranceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/DeleteInsuranceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/UpdateInsuranceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/UpdateInsuranceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/dto/PagesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/dto/PagesDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/repository/UserRepositorySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/repository/UserInsuranceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/service/impl/CompanyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/service/impl/CompanyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/service/impl/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/utils/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addUserInsurance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/detailUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/detailUserInsurance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/updateUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/updateUserInsurance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/AddInsuranceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/AddInsuranceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/AjaxAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/DeleteInsuranceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/DeleteInsuranceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/UpdateInsuranceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/UpdateInsuranceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/dto/PagesDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/dto/PagesDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/UserRepositorySQL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/CompanyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/CompanyServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/UserDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/utils/Constant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/utils/Constant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/AddUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/AddUserInsurance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/DetailUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/DetailUserInsurance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/UpdateUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/UpdateUserInsurance.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1lXCqRBdrQzAszse2I9C8SLIsHj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../product/mpos-portal" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="InsuranceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="insurance" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.insurance.application.InsuranceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="386b109a-e670-4400-a77e-35e91e36214c" name="Default Changelist" comment="" />
+      <created>1607734239323</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607734239323</updated>
+      <workItem from="1607734240457" duration="585000" />
+      <workItem from="1607819170303" duration="22046000" />
+      <workItem from="1607882061058" duration="60000" />
+      <workItem from="1611306584852" duration="958000" />
+      <workItem from="1611310706896" duration="26000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/insurance/application/controller/AddInsuranceController.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

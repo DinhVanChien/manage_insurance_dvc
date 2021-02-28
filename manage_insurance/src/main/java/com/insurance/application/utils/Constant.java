@@ -1,0 +1,45 @@
+package com.insurance.application.utils;
+
+public class Constant {
+    public static final String REDIRECT = "redirect:";
+    public static final String START_REQUEST = "/";
+    public static final String LOGIN_ANNOTATION = "/login";
+    public static final String LOGOUT_ANNOTATION = "/logout";
+    public static final String USERNAME = "username";
+    public static final String PASSWORD = "password";
+    public static final String SEARCH_FORM = "searchForm";
+    public static final String INSURANCE_ANNOTATION = "/insurances";
+    public static final String LIST_COMPANY = "listCompany";
+    public static final int DEFAULT_RECORD_PAGE = 5;
+    public static final int DEFAULT_LIST_SHOW_PAGE = 5;
+    public static final String USER_DTO = "userDto";
+    public static final String NOT_EMPTY_USERNAME = "NotEmpty.user.username";
+    public static final String NOT_EMPTY_PASSWORD = "NotEmpty.user.password";
+    public static final String NOT_EMPTY_FULLNAME = "NotEmpty.user.fullname";
+    public static final String NOT_EMPTY_INSURANCE_NUMBER = "NotEmpty.insurance.number";
+    public static final String NOT_EMPTY_BIRTHDAY = "NotEmpty.user.birthday";
+    public static final String NOT_EMPTY_INSURANCE_PLACE = "NotEmpty.insurance.place";
+    public static final String NOT_EMPTY_INSURANCE_DATE_START = "NotEmpty.insurance.dateStart";
+    public static final String NOT_EMPTY_INSURANCE_DATE_END = "NotEmpty.insurance.dateEnd";
+    public static final String NOT_EMPTY_COMPANY_NAME = "NotEmpty.company.name";
+    public static final String NOT_EMPTY_COMPANY_PHONE = "NotEmpty.company.phone";
+    public static final String NOT_EMPTY_COMPANY_ADDRESS = "NotEmpty.company.address";
+    public static final String NOT_EMPTY_COMPANY_EMAIL = "NotEmpty.company.email";
+    public static final String ALREADY_EXIST_INSURANCE_NUMBER = "AlreadyExist.insurance.number";
+    public static final String ALREADY_EXIST_COMPANY_NAME = "AlreadyExist.company.name";
+    public static final String ALREADY_EXIST_COMPANY_EMAIL = "AlreadyExist.company.email";
+    public static final String ALREADY_EXIST_COMPANY_PHONE = "AlreadyExist.company.phone";
+    public static final String ALREADY_EXIST_USERNAME = "AlreadyExist.user.username";
+    public static final String INSURANCE_NUMBER_LENGHT = "Insurance.number.lenght";
+    public static final String INSURANCE_NUMBER_FORMAT = "Insurance.number.format";
+    public static final String FORMAT_COMPANY_EMAIL = "Format.company.email";
+    public static final String FORMAT_COMPANY_PHONE = "Format.company.phone";
+    public static final String TYPE = "type";
+    public static final String SEARCH = "search";
+    public static final String REDIRECT_INSURANCES_PAGE = "redirect:/insurances/home";
+    public static final String INSURANCE_FORM = "insuranceForm";
+    public static final String PAGE_ADD = "addUserInsurance";
+    public static final String PAGE_LOGIN = "login";
+    public static final String PAGE_UPDATE = "updateUserInsurance";
+    public static final String PAGE_DETAIL = "detailUserInsurance";
+}

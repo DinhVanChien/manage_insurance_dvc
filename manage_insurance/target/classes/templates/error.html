@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/error.css}"/>
+</head>
+<body>
+<div class="error">
+    <div th:if="${err}">
+        <h4 class="message" th:text='${err.message}'></h4>
+        <h4 th:text="${err.status}"></h4>
+    </div>
+    <div th:unless="${err}">
+        <h4 class="message">Path không tồn tại</h4>
+        <h4>404 NOT_FOUND</h4>
+    </div>
+    <p>Vui lòng quay lại trang chủ <a th:href="@{/insurances}">HomePage</a></p>
+</div>
+</body>
+</html>

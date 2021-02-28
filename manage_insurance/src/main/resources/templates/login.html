@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"
+          th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            th:href="@{https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js}"></script>
+    <script src="../static/js/validateLogin.js" th:src="@{/js/validateLogin.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <style>
+        .container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Đăng nhập hệ thống</h2>
+            <div id="isError" th:value="${#request.getParameter('error')}"
+                 th:switch="${#request.getParameter('error')}">
+                <h4 style="color: red" th:case="'true'">Username hoặc password không đúng</h4>
+                <h4 th:case="'false'"></h4>
+            </div>
+            <h4 id="error"></h4><br>
+            <form th:action="@{/login}" method="post" onsubmit="return validateLogin()">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" name="password" id="password"
+                           placeholder="Enter password">
+                </div>
+                <button type="submit" id="btnLogin" class="btn btn-success">Login</button>
+               <!-- <a href="#" id="forgotPassword">Forgot password?</a> -->
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

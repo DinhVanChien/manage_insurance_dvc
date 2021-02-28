@@ -1,0 +1,60 @@
+.title {
+    width: 27%;
+}
+
+#titleNew {
+    width: 9%;
+}
+
+.table.table.table-borderless td .value {
+    width: 100%;
+}
+
+#tbNewCompany #content {
+    width: 20%;
+}
+
+#infoCompany, #selectCompany {
+    margin-left: 29%;
+}
+
+#infoCompany tr td {
+    padding-right: 30px;
+}
+
+#tbNewCompany td input {
+    width: 100%;
+}
+
+#tbNewCompany {
+    margin-left: 10%;
+}
+
+#btnDK {
+    margin-left: 20px;
+}
+
+#btnHuy {
+    margin-left: 30px;
+}
+
+.error {
+    display: none;
+    margin-bottom: 2px;
+}
+
+#divNew {
+    display: none;
+}
+
+table#tbNewCompany {
+    margin-left: 27%;
+}
+
+.isError {
+    width: 30%;
+}
+
+span {
+    color: #ff0000;
+}
