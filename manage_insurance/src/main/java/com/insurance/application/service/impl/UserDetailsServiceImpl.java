@@ -34,6 +34,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (user != null) {
             List<String> roleName = userRoleRepository.findRoleNamesByUserId(user.getId());
             UserDetails userDetails = new CustomUserDetail(user, roleName);
+            System.out.println(user.getUsername());
+            System.out.println(user.getPassword());
             return userDetails;
         } else {
             throw new UsernameNotFoundException("User " + user.getUsername() + " was not found in the database");

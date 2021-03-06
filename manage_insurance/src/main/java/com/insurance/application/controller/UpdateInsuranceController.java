@@ -60,6 +60,7 @@ public class UpdateInsuranceController {
         try {
             if (ObjectUtils.isNotEmpty(id)) {
                 boolean checkRole = false;
+                Response response = new Response(true);
                 InsuranceForm insuranceForm = userService.findById(id);
                 Authentication auth = SecurityContextHolder.getContext().getAuthentication();
                 Set<String> roles = userRoleService.findRoleNamesByUserName(auth.getName());
@@ -75,6 +76,8 @@ public class UpdateInsuranceController {
                 insuranceForm.setEndDateInsurance(Common.convertFromDateYMD(insuranceForm.getEndDateInsurance()));
                 model.addAttribute("id", id);
                 model.addAttribute(Constant.INSURANCE_FORM, insuranceForm);
+                response.setStatus(false);
+                model.addAttribute("response", response);
             }
         } catch (NotFoundException fx) {
             throw new NotFoundException("Error không có record tồn tại");
@@ -87,19 +90,23 @@ public class UpdateInsuranceController {
     @PostMapping("/update")
     public String updatePost(@ModelAttribute(Constant.INSURANCE_FORM) @Validated InsuranceForm insuranceForm,
                              BindingResult bindingResult,
-                             Model model, HttpServletRequest request) throws Exception {
+                             Model model,
+                             HttpServletRequest request) throws Exception {
         Response response = new Response(true);
         try {
             insuranceForm.setType("update");
             registerValidate.validate(insuranceForm, bindingResult);
             if (bindingResult.hasErrors()) {
                 model.addAttribute(Constant.LIST_COMPANY, companyList());
+                if (Common.isNewCompany(insuranceForm.getIsNewCompany())) {
+                    response.setNewCompany(true);
+                }
                 response.setStatus(false);
             } else {
                 String id = request.getParameter("id");
                 userService.update(insuranceForm, Common.convertInt(id));
-                model.addAttribute("response", response);
             }
+            model.addAttribute("response", response);
         } catch (NotFoundException fx) {
             throw new NotFoundException("Error không có record tồn tại");
         } catch (Exception ex) {

@@ -63,6 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // Cấu hình cho Logout Page.
                 .and().logout().logoutUrl(Constant.LOGOUT_ANNOTATION).
                 logoutSuccessUrl("/logoutSuccessful");
+        System.out.println("nahyr vào khi login");
     }
 
     @Override

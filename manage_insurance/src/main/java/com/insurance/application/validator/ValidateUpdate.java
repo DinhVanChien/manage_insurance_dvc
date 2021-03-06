@@ -1,15 +1,20 @@
 package com.insurance.application.validator;
 
+import com.insurance.application.dto.CompanyDto;
 import com.insurance.application.form.InsuranceForm;
 import com.insurance.application.service.CompanyService;
 import com.insurance.application.service.InsuranceService;
 import com.insurance.application.service.UserService;
+import com.insurance.application.utils.Common;
+import com.insurance.application.utils.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -37,8 +42,6 @@ public class ValidateUpdate implements Validator {
         InsuranceForm registerForm = (InsuranceForm) target;
         Locale localeVi = new Locale("vi");
         ResourceBundle labels = ResourceBundle.getBundle("messages", localeVi);
-        boolean isValidateInsurace = false;
-        /*
         ValidationUtils.rejectIfEmptyOrWhitespace(errors,
                 "numberInsurance", Constant.NOT_EMPTY_INSURANCE_NUMBER,
                 labels.getString(Constant.NOT_EMPTY_INSURANCE_NUMBER));
@@ -124,7 +127,5 @@ public class ValidateUpdate implements Validator {
                     Constant.INSURANCE_NUMBER_LENGHT,
                     labels.getString(Constant.INSURANCE_NUMBER_LENGHT));
         }
-
-         */
     }
 }

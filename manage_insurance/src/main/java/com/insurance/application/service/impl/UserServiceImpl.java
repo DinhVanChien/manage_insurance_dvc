@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,7 +67,7 @@ public class UserServiceImpl implements UserService {
         boolean check = false;
         int companyId = 0;
         int insuranceId = 0;
-        if (registerForm.getCompanyId() == 0) {
+        if (Common.isNewCompany(registerForm.getIsNewCompany())) {
             Company company = new Company();
             company.setName(registerForm.getCompanyName());
             company.setAddress(registerForm.getCompanyAddress());
@@ -105,7 +104,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+    @Transactional(propagation = Propagation.REQUIRED)
     public boolean update(InsuranceForm insuranceForm, int id) throws Exception {
         boolean check = false;
         int insuranceId = 0;
@@ -113,7 +112,7 @@ public class UserServiceImpl implements UserService {
         if (ObjectUtils.isNotEmpty(id)) {
             user = userRepository.findById(id);
             Company company = new Company();
-            if ("no".equals(insuranceForm.getIsNewCompany())) {
+            if (Common.isNewCompany(insuranceForm.getIsNewCompany())) {
                 company.setName(insuranceForm.getCompanyName());
                 company.setAddress(insuranceForm.getCompanyAddress());
                 company.setEmail(insuranceForm.getCompanyEmail());
@@ -152,7 +151,6 @@ public class UserServiceImpl implements UserService {
             userRepository.deleteById(id);
         }
     }
-
     @Override
     public List<InsuranceForm> getListUser(int companyId,
                                            String name,

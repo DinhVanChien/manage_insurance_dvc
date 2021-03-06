@@ -28,7 +28,9 @@ h4 {
 #header a {
     font-size: 18px;
 }
-
+#formUpdate {
+    width: 75%;
+}
 .header {
     width: 100%;
     position: relative;
@@ -39,10 +41,11 @@ h4 {
     right: 10px;
     top: 20px;
 }
-
+.titleIn {
+    width: 29.5%;
+}
 <!--
 * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
 -->
 
 .company span {

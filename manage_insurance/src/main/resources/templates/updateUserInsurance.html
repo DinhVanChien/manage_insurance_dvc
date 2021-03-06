@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UpdateInsurance</title>
-
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"
           th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}">
@@ -28,18 +27,21 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-8">
             <div class="header">
                 <div th:include="~{/header ::#header}"></div>
             </div>
-            <h2>Update thông tin thẻ bảo hiểm</h2>
-            <form th:action="@{/insurances/update}" th:object="${insuranceForm}" method="post">
-                <input type="hidden" name="id" th:value="${id}"/>
+        </div>
+        <form id="formUpdate" th:action="@{/insurances/update}" th:object="${insuranceForm}" method="post">
+            <div class="col-md-12">
+                <h2>Update thông tin thẻ bảo hiểm</h2>
+                <input type="hidden" name="id" th:field="*{id}"/>
                 <table class="table table-borderless">
                     <tr>
-                        <td>Họ và Tên</td>
-                        <td><input class="value" type="text" th:field="*{fullName}" name="fullName" id="fullName"></td>
-                        <td><span class="error" id="erFullName"></span>
+                        <td class="titleIn">Họ và Tên</td>
+                        <td><input class="value" type="text" th:field="*{fullName}" name="fullName" id="fullName">
+                        </td>
+                        <td class="isError"><span class="error" id="erFullName"></span>
                             <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></span>
                         </td>
                     </tr>
@@ -57,19 +59,25 @@
                         <td><input class="value" type="date" th:field="*{birthDate}"
                                    name="birthDate" id="birthDate"></td>
 
-                        <td><span class="error" id="erBirthDate"></span>
+                        <td ><span class="error" id="erBirthDate"></span>
                             <span th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}"></span>
                         </td>
                     </tr>
                 </table>
+            </div>
+
+            <div class="col-md-12">
                 <table>
                     <tr>
                         <td><label>
-                            <input type="radio" name="company" value="yes" checked
-                                   onchange="showNewCompany()"> Công ty đã có </label>
+                            <input type="radio" name="company" value="no" checked
+                                   id="rdCompany2" onchange="showNewCompany()"> Công ty đã có </label>
                         </td>
                     </tr>
                 </table>
+            </div>
+
+            <div class="col-md-12">
                 <div id="existCompany">
                     <table id="selectCompany">
                         <tr>
@@ -92,14 +100,19 @@
                     </table>
                     <table id="infoCompany"></table>
                 </div>
+            </div>
+
+            <div class="col-md-12">
                 <table>
                     <tr>
-                        <td><label><input type="radio" name="company" value="no" id="rdCompany"
+                        <td><label><input type="radio" name="company" value="yes" id="rdCompany"
                                           onchange="showNewCompany()">Đăng kí công ty mới </label>
                         </td>
                     </tr>
                 </table>
+            </div>
 
+            <div class="col-md-12">
                 <div id="divNew">
                     <table id="tbNewCompany" class="table table-borderless">
                         <input id="isNewCompany" style="display: none" th:field="*{isNewCompany}"/>
@@ -109,7 +122,8 @@
                                 <input class="value" th:field="*{companyName}" type="text" name="newCompany"
                                        id="newCompany"></td>
                             <td class="isError"><span class="error" id="erNewCompany"></span>
-                                <span th:if="${#fields.hasErrors('companyName')}" th:errors="*{companyName}"></span>
+                                <span th:if="${#fields.hasErrors('companyName')}"
+                                      th:errors="*{companyName}"></span>
                             </td>
                         </tr>
                         <tr>
@@ -128,7 +142,7 @@
                                        id="newEmail"></td>
                             <td><span class="error" id="erNewEmail"></span>
                                 <span th:if="${#fields.hasErrors('companyEmail')}" th:errors="*{companyEmail}">
-                                 </span>
+                             </span>
                             </td>
                         </tr>
                         <tr>
@@ -136,67 +150,81 @@
                             <td><input class="value" type="number" th:field="*{companyPhone}" name="newPhone"
                                        id="newPhone"></td>
                             <td><span class="error" id="erNewPhone"></span>
-                                <span th:if="${#fields.hasErrors('companyPhone')}" th:errors="*{companyPhone}"></span>
+                                <span th:if="${#fields.hasErrors('companyPhone')}"
+                                      th:errors="*{companyPhone}"></span>
                             </td>
                         </tr>
                     </table>
                 </div>
-
-                <div>
-                    <table class="table table-borderless">
-                        <tr>
-                            <td class="titleIn">Nơi đăng kí KCB</td>
-                            <td><input class="value" type="text" th:field="*{placeRegisterOfInsurance}"
-                                       name="placeRegister" id="placeRegister"></td>
-                            <td class="isError"><span class="error" id="erPlaceRegister"></span>
-                                <span th:if="${#fields.hasErrors('placeRegisterOfInsurance')}"
-                                      th:errors="*{placeRegisterOfInsurance}"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Ngày bắt đầu thẻ BH</td>
-                            <td><input type="date" class="value" th:field="*{startDateInsurance}"
-                                       name="startDate" id="startDate"></td>
-                            <td><span class="error" id="erStartDate"></span>
-                                <span th:if="${#fields.hasErrors('startDateInsurance')}"
-                                      th:errors="*{startDateInsurance}"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Ngày kết thúc thẻ BH</td>
-                            <td><input type="date" class="value" th:field="*{endDateInsurance}"
-                                       name="endDate" id="endDate"></td>
-                            <td>
-                                <span class="error" id="erEndDate"></span>
-                                <span th:if="${#fields.hasErrors('endDateInsurance')}"
-                                      th:errors="*{endDateInsurance}"></span>
-                            </td>
-                        </tr>
-                    </table>
-                    <button id="btnDK" type="submit" class="btn btn-success">Update</button>
-                    <button id="btnHuy" type="button" class="btn btn-success">Cancel</button>
-                </div>
-            </form>
-            <!----------------------- Popup ----------------------->
-            <div class="popup_box">
-                <i class="fas fa-exclamation"></i>
-                <h1>Thông báo!</h1>
-                <label></label><br>
-                <input type="button" th:onclick="'ok();'"
-                       class="btnResult" value="OK"/>
             </div>
+
+            <div class="col-md-12">
+                <table class="table table-borderless">
+                    <tr>
+                        <td class="titleIn">Nơi đăng kí KCB</td>
+                        <td><input class="value" type="text" th:field="*{placeRegisterOfInsurance}"
+                                   name="placeRegister" id="placeRegister"></td>
+                        <td class="isError"><span class="error" id="erPlaceRegister"></span>
+                            <span th:if="${#fields.hasErrors('placeRegisterOfInsurance')}"
+                                  th:errors="*{placeRegisterOfInsurance}"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ngày bắt đầu thẻ BH</td>
+                        <td><input type="date" class="value" th:field="*{startDateInsurance}"
+                                   name="startDate" id="startDate"></td>
+                        <td><span class="error" id="erStartDate"></span>
+                            <span th:if="${#fields.hasErrors('startDateInsurance')}"
+                                  th:errors="*{startDateInsurance}"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ngày kết thúc thẻ BH</td>
+                        <td><input type="date" class="value" th:field="*{endDateInsurance}"
+                                   name="endDate" id="endDate"></td>
+                        <td>
+                            <span class="error" id="erEndDate"></span>
+                            <span th:if="${#fields.hasErrors('endDateInsurance')}"
+                                  th:errors="*{endDateInsurance}"></span>
+                        </td>
+                    </tr>
+                </table>
+                <button id="btnDK" type="submit" class="btn btn-success">Update</button>
+                <a th:href="@{'/insurances/home?type=back'}" class="btn btn-success">Cancel</a>
+            </div>
+        </form>
+        <!----------------------- Popup ----------------------->
+        <div class="popup_box">
+            <i class="fas fa-exclamation"></i>
+            <h1>Thông báo!</h1>
+            <label></label><br>
+            <input type="button" th:onclick="'ok();'"
+                   class="btnResult" value="OK"/>
         </div>
     </div>
 </div>
 </body>
 <script th:inline="javascript">
     var status = [[${response.status}]];
+    var isNewCom = [[${response.newCompany}]];
+    if (isNewCom) {
+        $('#rdCompany').prop('checked', true);
+        $('#rdCompany2').prop('checked', false);
+        $("#divNew").show();
+        $("#existCompany").hide();
+    } else {
+        $('#rdCompany').prop('checked', false);
+        $('#rdCompany2').prop('checked', true);
+        $("#existCompany").show();
+        $("#divNew").hide();
+
+    }
     if (status.length > 0 && "true" == status) {
         $('.popup_box').css("display", "block");
         $('.popup_box').find('label').text("Update thành công")
         $('.btnResult').click(function () {
             $('.popup_box').css("display", "none");
-            location.href = "/insurances/";
+            location.href = "/insurances/home";
         });
     }
 </script>

@@ -38,7 +38,7 @@ public class User extends Auditable<String> implements Serializable {
     @Column(name = "username", nullable = false, length = 30)
     private String username;
 
-    @Column(name = "password", length = 10)
+    @Column(name = "password", length = 255)
     private String password;
 
     @Column(name = "user_full_name", nullable = false, length = 50)

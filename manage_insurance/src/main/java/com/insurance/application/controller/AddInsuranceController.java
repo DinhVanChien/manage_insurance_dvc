@@ -40,12 +40,14 @@ public class AddInsuranceController {
 
     @GetMapping("/add")
     public String pageRegisterInsurance(Model model) {
+        Response response = new Response(false, false);
         try {
             InsuranceForm insuranceForm = new InsuranceForm();
             model.addAttribute(Constant.INSURANCE_FORM, insuranceForm);
         } catch (Exception ex) {
             new Exception(ex.getMessage());
         }
+        model.addAttribute("response", response);
         return Constant.PAGE_ADD;
     }
 
@@ -54,11 +56,14 @@ public class AddInsuranceController {
                                     @Validated InsuranceForm insuranceForm,
                                     BindingResult bindingResult,
                                     Model model) throws Exception {
-        Response response = new Response(true);
+        Response response = new Response(true, false);
         try {
             registerValidate.validate(insuranceForm, bindingResult);
             if (bindingResult.hasErrors()) {
                 model.addAttribute(Constant.LIST_COMPANY, companyList());
+                if (Common.isNewCompany(insuranceForm.getIsNewCompany())) {
+                    response.setNewCompany(true);
+                }
                 response.setStatus(false);
             } else {
                 userService.insert(insuranceForm);

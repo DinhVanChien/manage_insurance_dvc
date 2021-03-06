@@ -42,8 +42,7 @@ public class ValidateInsuranceForm implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         InsuranceForm insuranceForm = (InsuranceForm) target;
-        // Locale localeVi = new Locale("vi", "VN");
-        Locale localeVi = new Locale("vi");
+        Locale localeVi = new Locale("vi", "VN");
         ResourceBundle labels = ResourceBundle.getBundle("messages", localeVi);
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors,
@@ -66,7 +65,7 @@ public class ValidateInsuranceForm implements Validator {
                 "endDateInsurance", Constant.NOT_EMPTY_INSURANCE_DATE_END,
                 labels.getString(Constant.NOT_EMPTY_INSURANCE_DATE_END));
 
-        if ("no".equals(insuranceForm.getIsNewCompany())) {
+        if (Common.isNewCompany(insuranceForm.getIsNewCompany())) {
             ValidationUtils.rejectIfEmptyOrWhitespace(errors,
                     "companyName", Constant.NOT_EMPTY_COMPANY_NAME,
                     labels.getString(Constant.NOT_EMPTY_INSURANCE_NUMBER));

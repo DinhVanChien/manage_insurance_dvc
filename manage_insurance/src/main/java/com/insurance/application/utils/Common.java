@@ -164,7 +164,12 @@ public class Common {
         }
         return false;
     }
-
+    public static boolean isNewCompany(String isNew) {
+        if(!isNew.isEmpty() && "yes".equals(isNew)) {
+            return true;
+        }
+        return false;
+    }
     /*
     Chuyển tiếng Việt có dấu sang không dấu
      */
