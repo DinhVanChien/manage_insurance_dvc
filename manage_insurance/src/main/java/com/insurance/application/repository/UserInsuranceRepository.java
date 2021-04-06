@@ -37,7 +37,7 @@ public class UserInsuranceRepository {
                 listPram.put("name", Common.sqlLike(name));
             }
             if (!StringUtils.isBlank(insuranceNumber)) {
-                sql.append(" AND LOWER(i.insurance_number LIKE LOWER(:insuranceNumber)");
+                sql.append(" AND LOWER(i.insurance_number) LIKE LOWER(:insuranceNumber)");
                 listPram.put("insuranceNumber", Common.sqlLike(insuranceNumber));
             }
             if (!StringUtils.isBlank(placeOfRegister)) {
@@ -90,6 +90,23 @@ public class UserInsuranceRepository {
                 query.setParameter(entry.getKey(), entry.getValue());
             }
             return query.getResultList();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
+
+    public User getUser( String insuranceNumber, String fullName) {
+        try {
+            StringBuilder sql = new StringBuilder();
+            sql.append("SELECT u.* FROM USERS u");
+            sql.append(" JOIN INSURANCE i");
+            sql.append(" ON u.insurance_id = i.id");
+            sql.append(" WHERE u.user_full_name = :fullName");
+            sql.append(" AND i.insurance_number = :insuranceNumber");
+            Query query = (Query) entityManager.createNativeQuery(sql.toString(), User.class);
+            query.setParameter("fullName", fullName);
+            query.setParameter("insuranceNumber", insuranceNumber);
+            return (User) query.uniqueResult();
         } catch (NoResultException e) {
             return null;
         }

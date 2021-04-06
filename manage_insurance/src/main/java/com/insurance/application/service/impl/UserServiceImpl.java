@@ -62,6 +62,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public InsuranceForm findByInsuNumberAndFullName(String insuNum, String fullName) {
+        User user = userRepositorySQL.getUser(insuNum, fullName);
+        if (user != null) {
+            InsuranceForm inForm = new InsuranceForm(user);
+            return inForm;
+        }
+        return null;
+    }
+
+    @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public boolean insert(InsuranceForm registerForm) throws Exception {
         boolean check = false;

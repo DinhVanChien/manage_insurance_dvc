@@ -42,7 +42,6 @@ public class DetailInsuranceController {
                 if (!isRole && insuranceForm.getUsername().equals(auth.getName())) {
                     isRole = true;
                 }
-                System.out.println("role  " + roles);
                 model.addAttribute("insurance", insuranceForm);
                 model.addAttribute("role", isRole);
             }

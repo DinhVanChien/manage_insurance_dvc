@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = {Constant.START_REQUEST, Constant.LOGIN_ANNOTATION})
 @PropertySource("classpath:messages_vi.properties")
 public class LoginController {
-    @Value("${AlreadyExist.insurance.number}")
-    private String name;
     @GetMapping
     public String loginPage() {
-        System.out.println(name);
         return Constant.PAGE_LOGIN;
     }
 }

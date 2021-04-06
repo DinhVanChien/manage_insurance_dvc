@@ -120,7 +120,7 @@ public class ListInsuranceController {
             // Write header
             CellStyle cellStyle = Common.createStyleForHeader(sheet);
             // Create row
-            String[] header = {"Tên người sử dụng", "Giới tính", "Ngày sinh", "Mã thẻ bảo hiểm", "Kì hạn", "Nơi đăng kí KCB"};
+            String[] header = {"Tên người sử dụng","Công ty", "Giới tính", "Ngày sinh", "Mã thẻ bảo hiểm", "Kì hạn", "Nơi đăng kí KCB"};
             Common.createCellHeader(sheet, cellStyle, header);
             // Write data
             rowIndex++;
@@ -129,6 +129,7 @@ public class ListInsuranceController {
                 Row row = sheet.createRow(rowIndex);
                 String[] value = {
                         in.getFullName(),
+                        in.getCompanyName(),
                         in.getSex().equals("1") ? "Nam" : "Nữ",
                         in.getBirthDate(),
                         in.getNumberInsurance(),

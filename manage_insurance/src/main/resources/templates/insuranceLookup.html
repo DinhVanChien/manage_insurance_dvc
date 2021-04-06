@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>ListInsurce</title>
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js}">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js}">
+    </script>
+    <script src="../static/js/main.js"
+            th:src="@{/js/main.js}">
+    </script>
+    <script src="../static/js/validateAddNew.js" th:src="@{/js/validateLookup.js}"></script>
+    <style>
+        button.btn.btn-success {margin-left: 30%;}
+        .viewUser {
+            margin-top: 20px;
+        }
+        .error {
+            color: #e70f0f;
+        }
+        .insuNumber {
+            margin-top: 5px;
+        }
+        #lookup {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" >
+            <form th:action="@{/insurances-lookup}"  method="POST" onsubmit="return validateLookup()">
+                <div id="lookup">
+                    <h4>Tra cứu thông tin bảo hiểm của bạn vui lòng nhập mã số bảo hiểm và tên của bạn</h4>
+
+                    <div class="form-group insuNumber">
+                        <span class="error" th:text="${message}"></span><br>
+                        <label for="insuranceId">Mã số thẻ bảo hiểm:</label>
+                        <input type="text" class="form-control" name="numberInsurance" id="insuranceId"/>
+                        <span class="error" id="erNumberInsurance"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullName">Tên người sử dụng:</label>
+                        <input type="text" class="form-control" name="fullName" id="fullName"/>
+                        <span class="error" id="erFullName"></span>
+                    </div>
+                    <button type="submit" class="btn btn-success">Tra cứu</button>
+            </form>
+            <div class="viewUser">
+                <h4>Thông tin thẻ bảo hiểm</h4>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Mã số thẻ bảo hiểm</td>
+                        <td  th:utext="${insurance.numberInsurance}">
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>Họ và tên</td>
+                        <td th:utext="${insurance.fullName}"></td>
+                    </tr>
+                    <tr>
+                        <td>Giới tính</td>
+                        <td th:utext="${insurance.sex} == '1' ? 'Nam': 'Nữ'"></td>
+                    </tr>
+                    <tr>
+                        <td>Ngày sinh</td>
+                        <td th:utext="${insurance.birthDate}"></td>
+                    </tr>
+                    <tr>
+                        <td>Tên công ty</td>
+                        <td th:utext="${insurance.companyName}"></td>
+                    </tr>
+                    <tr>
+                        <td>Nơi đăng kí KCB</td>
+                        <td th:utext="${insurance.placeRegisterOfInsurance}"></td>
+                    </tr>
+                    <tr>
+                        <td>Kì hạn thẻ bảo hiểm</td>
+                        <td th:utext="${insurance.startDateInsurance} +' đến '
+                            +${insurance.endDateInsurance}"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+    <script th:inline="javascript">
+        var insuNumber = [[${insurance.numberInsurance}]];
+        if (insuNumber != null) {
+        $(".viewUser").show();
+    } else {
+        $(".viewUser").hide();
+    }
+</script>
+</html>

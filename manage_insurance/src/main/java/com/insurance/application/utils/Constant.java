@@ -4,6 +4,7 @@ public class Constant {
     public static final String REDIRECT = "redirect:";
     public static final String START_REQUEST = "/";
     public static final String LOGIN_ANNOTATION = "/login";
+    public static final String INSURANCE_LOOKUP = "/insurances-lookup";
     public static final String LOGOUT_ANNOTATION = "/logout";
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
@@ -12,7 +13,6 @@ public class Constant {
     public static final String LIST_COMPANY = "listCompany";
     public static final int DEFAULT_RECORD_PAGE = 5;
     public static final int DEFAULT_LIST_SHOW_PAGE = 5;
-    public static final String USER_DTO = "userDto";
     public static final String NOT_EMPTY_USERNAME = "NotEmpty.user.username";
     public static final String NOT_EMPTY_PASSWORD = "NotEmpty.user.password";
     public static final String NOT_EMPTY_FULLNAME = "NotEmpty.user.fullname";

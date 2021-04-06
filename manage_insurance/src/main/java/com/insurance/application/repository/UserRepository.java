@@ -17,7 +17,4 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     void deleteById(int id);
 
-    @Query(value = "SELECT * FROM USERS u WHERE u.company_id = ?1", nativeQuery = true)
-    List<User> findUsersByCompanyId(int companyId);
-
 }

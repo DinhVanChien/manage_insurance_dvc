@@ -41,6 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers(
                 Constant.START_REQUEST,
                 Constant.LOGIN_ANNOTATION,
+                Constant.INSURANCE_LOOKUP,
                 Constant.LOGOUT_ANNOTATION).permitAll();
         // Trang /userInfo yêu cầu phải login với vai trò ROLE_USER hoặc ROLE_ADMIN.
         // Nếu chưa login, nó sẽ redirect tới trang /login.
@@ -63,7 +64,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // Cấu hình cho Logout Page.
                 .and().logout().logoutUrl(Constant.LOGOUT_ANNOTATION).
                 logoutSuccessUrl("/logoutSuccessful");
-        System.out.println("nahyr vào khi login");
     }
 
     @Override

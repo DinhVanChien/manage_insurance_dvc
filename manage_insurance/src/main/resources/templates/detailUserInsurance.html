@@ -69,16 +69,16 @@
                     </tr>
                 </table>
                 <a class="btn btn-success click"
-                   th:if="${role == true}" ? th:disabled>Delete</a>
+                   th:if="${role == true}" ? th:disabled>Xóa</a>
 
                 <a id="btnUpdate" th:href="@{/insurances/update/{id} (id=${insurance.id})}" class="btn btn-success"
-                   th:if="${role == true}" ? th:disabled>Update</a>
+                   th:if="${role == true}" ? th:disabled>Sửa</a>
             </div>
         </div>
         <div class="popup_box">
             <i class="fas fa-exclamation"></i>
             <h1>Thông báo!</h1>
-            <label>Bạn có chắc chắn muốn xóa record?</label>
+            <label>Bạn có chắc chắn muốn xóa bảo hiểm?</label>
             <div class="btns">
                 <a href="#" class="btnCancel">Cancel</a>
                 <input type="button" th:onclick="'deleteInsurance(\''+ ${insurance.id} +'\');'"

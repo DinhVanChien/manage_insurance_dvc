@@ -83,13 +83,14 @@
                 <table id="tblListUser" class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <td align="left">Tên người sử dụng
+                        <td align="left">Username
                             <span> <a th:href="@{/insurances/home/(sort=ASC)}"> ▲ </a></span>
                             <span> <a th:href="@{/insurances/home/(sort=DESC)}"> ▼ </a></span>
                         </th>
+                        <th>Công ty</th>
                         <th>Giới tính</th>
                         <th>Ngày sinh</th>
-                        <th>Mã số thẻ bảo hiểm</th>
+                        <th>Mã thẻ bảo hiểm</th>
                         <th>Kì hạn</th>
                         <th>Nơi đăng ký KCB</th>
                     </tr>
@@ -100,6 +101,7 @@
                             <a th:href="@{/insurances/detail/{id} (id=${in.id})}"
                                th:utext="${in.fullName}"></a>
                         </td>
+                        <td th:utext="${in.companyName}"></td>
                         <td id="sex" th:utext="${in.sex} == '1' ? 'Nam' : 'Nữ'"></td>
                         <td id="brithDay" th:utext="${in.birthDate}"></td>
                         <td id="mumberIn" th:utext="${in.numberInsurance}"></td>

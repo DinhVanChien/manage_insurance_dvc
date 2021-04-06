@@ -9,6 +9,8 @@ public interface UserService {
 
     InsuranceForm findByUsername(String username);
 
+    InsuranceForm findByInsuNumberAndFullName(String insuNum, String fullName);
+
     boolean insert(InsuranceForm registerForm) throws Exception;
 
     boolean update(InsuranceForm registerForm, int id) throws Exception;
