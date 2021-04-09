@@ -59,12 +59,18 @@ public class ListInsuranceController {
     public String listInsurance(HttpServletRequest request,
                                 @RequestParam(value = "page", required = false, defaultValue = "1") int page,
                                 @RequestParam(value = Constant.TYPE, required = false) String type,
-                                @RequestParam(value = "sort", required = false) String sortType,
+                                @RequestParam(value = "sort-name", required = false) String sortName,
+                                @RequestParam(value = "sort-innum", required = false) String sortInNum,
+                                @RequestParam(value = "sort-createdate", required = false) String sortCreateDate,
                                 Model model) throws Exception {
         try {
             PagesDto pagesDto = new PagesDto();
             List<InsuranceForm> insurances = new ArrayList<>();
             SearchForm searchForm = new SearchForm();
+            if(sortCreateDate == null) {
+                sortCreateDate = "DESC";
+            }
+
             // lần đầu vào trang home sẽ lấy bảo hiểm của sort cty đầu tiên
             if ("first".equals(type)) {
                 searchForm.setCompanyId(companyList().get(0).getId());
@@ -76,17 +82,10 @@ public class ListInsuranceController {
             } else {
                 searchForm = (SearchForm) request.getSession().getAttribute(Constant.SEARCH_FORM);
             }
-
-            if (!StringUtils.isBlank(sortType)) {
-                if ("DESC".equals(sortType)) {
-                    insurances = listInsurance(searchForm, "DESC", page);
-                } else {
-                    insurances = listInsurance(searchForm, "ASC", page);
-                }
-            } else {
-                insurances = listInsurance(searchForm, "ASC", page);
-            }
-
+            searchForm.setSortCreateDate(sortCreateDate);
+            searchForm.setSortName(sortName);
+            searchForm.setSortInNumber(sortInNum);
+            insurances = listInsurance(searchForm, page);
             pagesDto.setCurrentPage(page);
             pagesDto.setInsuranceForms(insurances);
             pagesDto.setTotalPage(pagesDto.getTotalPage(this.totalUser(searchForm)));
@@ -111,7 +110,7 @@ public class ListInsuranceController {
     public void exportCSV(HttpServletResponse response, HttpServletRequest request) throws Exception {
         try {
             SearchForm searchForm = (SearchForm) request.getSession().getAttribute(Constant.SEARCH_FORM);
-            List<InsuranceForm> listInsurances = listInsurance(searchForm, "ASC", 0);
+            List<InsuranceForm> listInsurances = listInsurance(searchForm, 0);
             // Create Workbook
             HSSFWorkbook workbook = new HSSFWorkbook();
             // Create sheet
@@ -120,7 +119,7 @@ public class ListInsuranceController {
             // Write header
             CellStyle cellStyle = Common.createStyleForHeader(sheet);
             // Create row
-            String[] header = {"Tên người sử dụng","Công ty", "Giới tính", "Ngày sinh", "Mã thẻ bảo hiểm", "Kì hạn", "Nơi đăng kí KCB"};
+            String[] header = {"Tên người sử dụng","Công ty", "Giới tính", "Ngày sinh", "Mã thẻ bảo hiểm", "Kì hạn", "Nơi đăng kí KCB", "Ngày đăng kí"};
             Common.createCellHeader(sheet, cellStyle, header);
             // Write data
             rowIndex++;
@@ -135,7 +134,8 @@ public class ListInsuranceController {
                         in.getNumberInsurance(),
                         in.getStartDateInsurance() + " ~ "
                                 + in.getEndDateInsurance(),
-                        in.getPlaceRegisterOfInsurance()
+                        in.getPlaceRegisterOfInsurance(),
+                        in.getCreateDate()
                 };
                 // Write data on row
                 Common.writeInsurance(value, row);
@@ -156,13 +156,16 @@ public class ListInsuranceController {
         model.addAttribute("pagesDto", pagesDto);
     }
 
-    private List<InsuranceForm> listInsurance(SearchForm searchForm, String sortType, int page) {
+    private List<InsuranceForm> listInsurance(SearchForm searchForm, int page) {
         List<InsuranceForm> listInsurance = userService.getListUser(
                 searchForm.getCompanyId(),
                 searchForm.getUserFullName(),
                 searchForm.getInsuranceNumber(),
                 searchForm.getPlaceRegister(),
-                sortType, page);
+                searchForm.getSortName(),
+                searchForm.getSortInNumber(),
+                searchForm.getSortCreateDate(),
+                page);
         return listInsurance;
     }
 

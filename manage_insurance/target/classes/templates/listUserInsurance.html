@@ -74,7 +74,7 @@
                     </div>
                     <div class="export">
                         <a th:href="@{/insurances/export}" class="btn btn-success grid-item"
-                           id="btnExport">ExportCSV</a>
+                           id="btnExport">Xuất danh sách BH</a>
                     </div>
                 </div>
                 <!-- ****************** view listUser area ************************ -->
@@ -83,16 +83,23 @@
                 <table id="tblListUser" class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <td align="left">Username
-                            <span> <a th:href="@{/insurances/home/(sort=ASC)}"> ▲ </a></span>
-                            <span> <a th:href="@{/insurances/home/(sort=DESC)}"> ▼ </a></span>
+                        <th align="left">Tên người sd
+                            <span> <a th:href="@{/insurances/home/(sort-name=ASC)}"> ▲ </a></span>
+                            <span> <a th:href="@{/insurances/home/(sort-name=DESC)}"> ▼ </a></span>
                         </th>
                         <th>Công ty</th>
                         <th>Giới tính</th>
                         <th>Ngày sinh</th>
-                        <th>Mã thẻ bảo hiểm</th>
+                        <th>Mã thẻ bảo hiểm
+                            <span> <a th:href="@{/insurances/home/(sort-innum=ASC)}"> ▲ </a></span>
+                            <span> <a th:href="@{/insurances/home/(sort-innum=DESC)}"> ▼ </a></span>
+                        </th>
                         <th>Kì hạn</th>
                         <th>Nơi đăng ký KCB</th>
+                        <th>Ngày đăng kí
+                            <span> <a th:href="@{/insurances/home/(sort-createdate=ASC)}"> ▲ </a></span>
+                            <span> <a th:href="@{/insurances/home/(sort-createdate=DESC)}"> ▼ </a></span>
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -108,6 +115,7 @@
                         <td id="startEndDate"
                             th:utext="${in.startDateInsurance} + ' đến ' + ${in.endDateInsurance}"></td>
                         <td id="place" th:utext="${in.placeRegisterOfInsurance}"></td>
+                        <td th:utext="${in.createDate}"></td>
                     </tr>
                     </tbody>
                     <div th:if="${pagesDto.insuranceForms == null}">

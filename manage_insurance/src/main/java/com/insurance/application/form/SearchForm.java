@@ -11,4 +11,7 @@ public class SearchForm {
     private String placeRegister;
     private int companyId;
     private int page;
+    private String sortName;
+    private String sortInNumber;
+    private String sortCreateDate;
 }

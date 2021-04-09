@@ -56,8 +56,13 @@ public class UserInsuranceRepository {
         }
     }
 
-    public List<User> getListUser(int companyId, String name, String insuranceNumber,
-                                  String placeOfRegister, String sortType, int page) {
+    public List<User> getListUser(int companyId, String name,
+                                  String insuranceNumber,
+                                  String placeOfRegister,
+                                  String sortName,
+                                  String sortInNum,
+                                  String sortCreateDate,
+                                  int page) {
         int offset = Common.getOffset(page, Constant.DEFAULT_RECORD_PAGE);
         try {
             StringBuilder sql = new StringBuilder();
@@ -78,7 +83,16 @@ public class UserInsuranceRepository {
                 sql.append(" AND LOWER(i.place_of_register) LIKE LOWER(:placeOfRegister)");
                 listPram.put("placeOfRegister", Common.sqlLike(placeOfRegister));
             }
-            sql.append(" ORDER BY u.user_full_name ").append(sortType);
+            if(sortName == null && sortInNum == null) {
+                sql.append(" ORDER BY u.CREATE_DATE ").append(sortCreateDate);
+            } else {
+                if(sortName != null) {
+                    sql.append(" ORDER BY u.user_full_name ").append(sortName);
+                } else {
+                    sql.append(" ORDER BY i.insurance_number ").append(sortInNum);
+                }
+            }
+
             // nếu là export csv thì sẽ ko lấy theo dk offset và limit
             if (page != 0) {
                 sql.append(" OFFSET ").append(offset).append(" ROWS FETCH NEXT ");
@@ -94,7 +108,6 @@ public class UserInsuranceRepository {
             return null;
         }
     }
-
     public User getUser( String insuranceNumber, String fullName) {
         try {
             StringBuilder sql = new StringBuilder();

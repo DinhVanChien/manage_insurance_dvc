@@ -1,6 +1,7 @@
 package com.insurance.application.form;
 
 import com.insurance.application.entity.User;
+import com.insurance.application.utils.Common;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -32,6 +33,7 @@ public class InsuranceForm {
     private String placeRegisterOfInsurance;
     private String startDateInsurance;
     private String endDateInsurance;
+    private String createDate;
 
     public InsuranceForm(User user) {
         this.id = user.getId();
@@ -49,6 +51,7 @@ public class InsuranceForm {
         this.placeRegisterOfInsurance = user.getInsuranceId().getPlaceOfRegister();
         this.startDateInsurance = String.valueOf(user.getInsuranceId().getStartDate());
         this.endDateInsurance = String.valueOf(user.getInsuranceId().getEndDate());
+        this.createDate = Common.convertTimestampFromToDate(user.getCreateDate());
     }
 }
 

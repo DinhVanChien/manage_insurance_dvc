@@ -134,3 +134,6 @@ span {
 .row .col-md-8 a {
     margin-bottom: 15px;
 }
+#trViewUser td {
+    font-size: 16px;
+}

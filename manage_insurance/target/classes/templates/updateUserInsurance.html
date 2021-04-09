@@ -189,13 +189,12 @@
                         </td>
                     </tr>
                 </table>
-                <button id="btnDK" type="submit" class="btn btn-success">Update</button>
-                <a th:href="@{'/insurances/home?type=back'}" class="btn btn-success">Cancel</a>
+                <button id="btnDK" type="submit" class="btn btn-success">Lưu</button>
+                <a th:href="@{'/insurances/home?type=back'}" class="btn btn-success">Hủy</a>
             </div>
         </form>
         <!----------------------- Popup ----------------------->
         <div class="popup_box">
-            <i class="fas fa-exclamation"></i>
             <h1>Thông báo!</h1>
             <label></label><br>
             <input type="button" th:onclick="'ok();'"

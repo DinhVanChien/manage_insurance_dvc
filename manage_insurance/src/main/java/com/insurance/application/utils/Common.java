@@ -6,6 +6,7 @@ import org.apache.poi.ss.usermodel.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -55,11 +56,12 @@ public class Common {
         return null;
     }
 
-    public static Date convertFromDateDMY(String stringDate) {
+    public static String convertTimestampFromToDate(Timestamp time) {
         try {
+            Date date = new Date(time.getTime());
             SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-            java.sql.Date sd = new java.sql.Date(sdf.parse(stringDate).getTime());
-            return sd;
+            String strDate = sdf.format(date);
+            return strDate;
         } catch (Exception e) {
             e.printStackTrace();
         }

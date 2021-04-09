@@ -6,74 +6,35 @@
   <component name="ChangeListManager">
     <list default="true" id="386b109a-e670-4400-a77e-35e91e36214c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insurance.iml" beforeDir="false" afterPath="$PROJECT_DIR$/insurance.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/AddInsuranceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/AddInsuranceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/UpdateInsuranceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/UpdateInsuranceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/dto/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/dto/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/service/impl/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/ListInsuranceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/controller/ListInsuranceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/form/InsuranceForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/form/InsuranceForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/form/SearchForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/form/SearchForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/repository/UserInsuranceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/repository/UserInsuranceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/utils/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/utils/Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/validator/ValidateInsuranceForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/validator/ValidateInsuranceForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/insurance/application/validator/ValidateUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/insurance/application/validator/ValidateUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_vi.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_vi.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/validateAddNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/validateAddNew.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/stylepopup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/stylepopup.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addUserInsurance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/detailUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/detailUserInsurance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/insuranceLookup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/insuranceLookup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/listUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/listUserInsurance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/updateUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/updateUserInsurance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/InsuranceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/InsuranceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/config/EntityAuditorAware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/config/EntityAuditorAware.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/config/JpaAuditingConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/config/JpaAuditingConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/config/SecurityFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/config/SecurityFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/AddInsuranceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/AddInsuranceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/LogoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/LogoutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/UpdateInsuranceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/UpdateInsuranceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/dto/CompanyDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/dto/CompanyDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/dto/PagesDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/dto/PagesDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/dto/Response.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/dto/Response.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/entity/Auditable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/entity/Auditable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/entity/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/entity/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/entity/Insurance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/entity/Insurance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/entity/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/entity/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/entity/UserRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/exception/AccessDeniedException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/exception/AccessDeniedException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/exception/CustomExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/exception/CustomExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/exception/ErrorResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/exception/ErrorResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/exception/NotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/exception/NotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/form/ErrorForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/form/ErrorForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/ListInsuranceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/controller/ListInsuranceController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/form/InsuranceForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/form/InsuranceForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/form/SearchForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/form/SearchForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/CompanyRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/CompanyRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/InsuranceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/InsuranceRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/PageUserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/PageUserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/UserRoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/UserRoleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/security/CustomUserDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/security/CustomUserDetail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/service/CompanyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/service/CompanyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/service/InsuranceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/service/InsuranceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/service/UserRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/service/UserRoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/UserInsuranceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/repository/UserInsuranceRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/CompanyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/CompanyServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/InsuranceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/InsuranceServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/UserDetailsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/UserRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/UserRoleServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/utils/Common$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/utils/Common$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/utils/Common.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/utils/Common.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/utils/Constant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/utils/Constant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/validator/ValidateInsuranceForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/validator/ValidateInsuranceForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/insurance/application/validator/ValidateUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/insurance/application/validator/ValidateUpdate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/validateAddNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/validateAddNew.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/addUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addUserInsurance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/stylepopup.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/stylepopup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/detailUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/detailUserInsurance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/listUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/listUserInsurance.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/updateUserInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/updateUserInsurance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/insurance/application/InsuranceApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/insurance/application/InsuranceApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,13 +76,15 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,6 +118,7 @@
       <workItem from="1614953591401" duration="8651000" />
       <workItem from="1614992617245" duration="18000" />
       <workItem from="1615021611150" duration="15765000" />
+      <workItem from="1617983350459" duration="3126000" />
     </task>
     <servers />
   </component>

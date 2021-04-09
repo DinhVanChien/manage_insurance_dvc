@@ -47,12 +47,14 @@
                     <div class="form-group insuNumber">
                         <span class="error" th:text="${message}"></span><br>
                         <label for="insuranceId">Mã số thẻ bảo hiểm:</label>
-                        <input type="text" class="form-control" name="numberInsurance" id="insuranceId"/>
+                        <input type="text" class="form-control" name="numberInsurance" id="insuranceId"
+                               />
                         <span class="error" id="erNumberInsurance"></span>
                     </div>
                     <div class="form-group">
                         <label for="fullName">Tên người sử dụng:</label>
-                        <input type="text" class="form-control" name="fullName" id="fullName"/>
+                        <input type="text" class="form-control" name="fullName" id="fullName"
+                        />
                         <span class="error" id="erFullName"></span>
                     </div>
                     <button type="submit" class="btn btn-success">Tra cứu</button>
@@ -89,6 +91,10 @@
                         <td>Kì hạn thẻ bảo hiểm</td>
                         <td th:utext="${insurance.startDateInsurance} +' đến '
                             +${insurance.endDateInsurance}"></td>
+                    </tr>
+                    <tr>
+                        <td>Ngày tạo bảo hiểm</td>
+                        <td th:utext="${insurance.createDate}"></td>
                     </tr>
                 </table>
             </div>

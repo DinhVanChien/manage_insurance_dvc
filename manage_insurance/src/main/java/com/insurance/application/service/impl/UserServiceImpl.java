@@ -166,9 +166,12 @@ public class UserServiceImpl implements UserService {
                                            String name,
                                            String insuranceNumber,
                                            String placeOfRegister,
-                                           String sortType,
+                                           String sortName,
+                                           String sortInNum,
+                                           String sortCreateDate,
                                            int page) {
-        List<User> users = userRepositorySQL.getListUser(companyId, name, insuranceNumber, placeOfRegister, sortType, page);
+        List<User> users = userRepositorySQL.getListUser(companyId, name, insuranceNumber, placeOfRegister,
+                sortName, sortInNum, sortCreateDate, page);
         List<InsuranceForm> inForms = new ArrayList<InsuranceForm>();
         if (users != null) {
             for (User u : users) {

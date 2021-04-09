@@ -18,7 +18,8 @@ public interface UserService {
     void deleteById(int id);
 
     List<InsuranceForm> getListUser(int companyId, String name, String insuranceNumber,
-                                    String placeOfRegister, String sortType, int page);
+                                    String placeOfRegister, String sortName,
+                                    String sortInNum, String sortCreateDate, int page);
 
     int getTotalUser(int companyId, String name, String insuranceNumber, String placeOfRegister);
 }
