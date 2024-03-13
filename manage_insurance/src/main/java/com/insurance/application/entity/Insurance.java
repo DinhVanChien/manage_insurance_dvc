@@ -23,14 +23,15 @@ public class Insurance extends Auditable<String> implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", length = 10)
     private Integer id;
+    
     @Column(name = "insurance_number", nullable = false, length = 10)
     private String insuranceNumber;
 
-    @Column(name = "insurance_start_date", nullable = false)
+    @Column(name = "start_date", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date startDate;
 
-    @Column(name = "insurance_end_date", nullable = false)
+    @Column(name = "end_date", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date endDate;
 

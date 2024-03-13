@@ -22,12 +22,14 @@ import java.util.List;
 @RequestMapping(Constant.INSURANCE_ANNOTATION)
 public class AddInsuranceController {
 
-    private UserService userService;
-    private ValidateInsuranceForm registerValidate;
-    private CompanyService companyService;
+    private final UserService userService;
+    private final ValidateInsuranceForm registerValidate;
+    private final CompanyService companyService;
 
     @Autowired
-    public AddInsuranceController(UserService userService, ValidateInsuranceForm registerValidate, CompanyService companyService) {
+    public AddInsuranceController(UserService userService, 
+    		ValidateInsuranceForm registerValidate, 
+    		CompanyService companyService) {
         this.userService = userService;
         this.registerValidate = registerValidate;
         this.companyService = companyService;

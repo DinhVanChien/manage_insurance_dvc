@@ -37,6 +37,7 @@ public class Company extends Auditable<String> implements Serializable {
 
     @Column(name = "telephone", length = 15)
     private String telephone;
+    
     @JsonIgnore
     @OneToMany(mappedBy = "insuranceId", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<User> users = new ArrayList<User>();

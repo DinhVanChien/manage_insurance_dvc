@@ -22,7 +22,7 @@ public class User extends Auditable<String> implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", length = 10)
-    private int id;
+    private Integer id;
     // Many to One Có nhiều user ở 1 cty
     // thông qua khóa ngoại company_id
     @JsonIgnore
@@ -41,10 +41,12 @@ public class User extends Auditable<String> implements Serializable {
     @Column(name = "password", length = 255)
     private String password;
 
-    @Column(name = "user_full_name", nullable = false, length = 50)
+    @Column(name = "full_name", nullable = false, length = 50)
     private String fullName;
+    
     @Column(name = "user_sex_division", nullable = false, length = 2)
     private char userSexDivision;
+    
     @Column(name = "birth_date")
     @Temporal(TemporalType.DATE)
     private Date birthDate;
